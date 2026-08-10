@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashutosh Priyadarshi | Founder, CrownOS</title>
+  <meta name="description" content="Personal profile of Ashutosh Priyadarshi, founder of CrownOS and Class 10 student at DAV, Patna.">
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #667085;
+      --line: #e5e7eb;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1000px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 800;
+    }
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: cover;
+      border-radius: 11px;
+      display: block;
+    }
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 14px;
+    }
+    .nav a:hover { color: var(--accent); }
+    .hero {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 90px 24px 70px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+    h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.02;
+      margin: 14px 0 20px;
+      letter-spacing: -0.045em;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 19px;
+      max-width: 680px;
+    }
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 15px 40px rgba(16,24,40,.07);
+    }
+    .hero-card .big {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .hero-card p { font-size: 15px; }
+    .btn {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--accent);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .btn:hover { background: var(--accent-dark); }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 55px 24px;
+    }
+    .section-title {
+      font-size: 30px;
+      margin: 0 0 24px;
+      letter-spacing: -.02em;
+    }
+    .about {
+      background: var(--card);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .about-inner { max-width: 1000px; margin: auto; padding: 55px 24px; }
+    .about p { max-width: 800px; color: #344054; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    .item {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+    }
+    .item h3 { margin: 0 0 6px; }
+    .item .meta { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+    .item ul { padding-left: 20px; margin-bottom: 0; color: #475467; }
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tag {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: #eef4ff;
+      color: #194185;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .vision {
+      background: #111827;
+      color: white;
+      border-radius: 24px;
+      padding: 38px;
+    }
+    .vision p { color: #d0d5dd; max-width: 760px; }
+    #contact .contact-icon {
+      width: 23px;
+      height: 23px;
+      margin-right: 8px;
+      color: var(--accent);
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vertical-align: middle;
+    }
+    #contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    #contact a:hover { text-decoration: underline; }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 40px 24px;
+      font-size: 14px;
+    }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding-top: 60px; }
+      .grid { grid-template-columns: 1fr; }
+      .nav a { margin-left: 10px; }
+      .nav-inner { padding: 14px 16px; }
+      h1 { font-size: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#" aria-label="CrownOS home">
+        <img src="crownos-logo.svg" alt="CrownOS logo">
+        <span>CrownOS</span>
+      </a>
+      <div>
+        <a href="#about">About</a>
+        <a href="#crownos">CrownOS</a>
+        <a href="#experience">Experience</a>
+        <a href="#vision">Vision</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow">Founder · Builder · Student</div>
+      <h1>Building CrownOS.</h1>
+      <p>
+        I'm Ashutosh Priyadarshi, a 14-year-old Class 10 student at DAV, Patna,
+        building software focused on clinic management and patient retention.
+      </p>
+      <a class="btn" href="#about">Learn more</a>
+    </div>
+
+    <div class="hero-card">
+      <div class="big">14</div>
+      <strong>Years old · Class 10</strong>
+      <p>DAV Public School, Patna</p>
+      <p>Currently working with a real clinic to understand practical healthcare problems and improve CrownOS through direct feedback.</p>
+    </div>
+  </header>
+
+  <div class="about" id="about">
+    <div class="about-inner">
+      <h2 class="section-title">About me</h2>
+      <p>
+        I'm a 14-year-old Class 10 student at DAV, Patna, and the founder of CrownOS.
+        I'm building software focused on clinic management and patient retention,
+        with the goal of helping clinics manage their operations and build stronger
+        relationships with patients.
+      </p>
+      <p>
+        I'm currently working with a real clinic, using direct feedback from
+        healthcare professionals to understand their problems and improve the
+        product based on actual requirements rather than assumptions.
+      </p>
+      <p>
+        I was also invited to the Bihar AI Summit, where I had the opportunity
+        to interact with founders, entrepreneurs and professionals from the
+        technology ecosystem.
+      </p>
+      <p>
+        These experiences have made me particularly interested in entrepreneurship,
+        SaaS, healthcare technology, product development, customer discovery and business.
+      </p>
+    </div>
+  </div>
+
+  <section id="crownos">
+    <h2 class="section-title">CrownOS</h2>
+    <div class="item">
+      <h3>Clinic Management & Patient Retention</h3>
+      <p>
+        CrownOS is being built to help clinics manage day-to-day operations
+        and maintain stronger relationships with patients.
+      </p>
+      <p>
+        The product is being developed through direct conversations and feedback
+        from healthcare professionals rather than assumptions about what clinics need.
+      </p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
+    <div class="grid">
+      <div class="item">
+        <h3>Founder — CrownOS</h3>
+        <div class="meta">2026 – Present · Patna, Bihar</div>
+        <ul>
+          <li>Building clinic management and patient retention software.</li>
+          <li>Working with a real clinic to understand practical requirements.</li>
+          <li>Conducting customer discovery with healthcare professionals.</li>
+          <li>Exploring product distribution and customer acquisition.</li>
+          <li>Building hands-on experience in product development, automation, sales and entrepreneurship.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>Bihar AI Summit</h3>
+        <div class="meta">Invited participant</div>
+        <p>
+          Invited to the Bihar AI Summit and had the opportunity to interact
+          with founders, entrepreneurs and professionals from the technology ecosystem.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Interests</h2>
+    <div class="tags">
+      <span class="tag">Entrepreneurship</span>
+      <span class="tag">SaaS</span>
+      <span class="tag">Healthcare Technology</span>
+      <span class="tag">Product Development</span>
+      <span class="tag">Customer Discovery</span>
+      <span class="tag">Business</span>
+      <span class="tag">Finance</span>
+    </div>
+  </section>
+
+  <section id="vision">
+    <div class="vision">
+      <h2>Long-term aspiration</h2>
+      <p>
+        One of my long-term academic aspirations is to study at IIM Ahmedabad.
+        I hope to continue learning at the intersection of entrepreneurship,
+        technology and business while building products that solve real problems.
+      </p>
+    </div>
+  </section>
+
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="grid">
+      <div class="item">
+        <h3>Personal</h3>
+        <p><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+  <path d="m4 7 8 6 8-6"></path>
+</svg><strong>Email:</strong> <a href="mailto:ashutoshpriyadarshi2010@gmail.com">ashutoshpriyadarshi2010@gmail.com</a></p>
+        <p><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M20.5 3.5A11 11 0 0 0 3.2 17.1L2 22l5-1.2A11 11 0 1 0 20.5 3.5Z"></path>
+  <path d="M8.2 7.2c.3-.4.7-.4 1-.1l1.2 1.4c.3.3.3.7.1 1l-.6.8c.8 1.5 1.8 2.5 3.3 3.3l.8-.6c.3-.2.7-.2 1 .1l1.4 1.2c.3.3.3.7-.1 1-1 1-2.1 1.2-3.3.8-2.2-.7-5.7-4.2-6.4-6.4-.4-1.2-.2-2.3.8-3.3Z"></path>
+</svg><strong>WhatsApp:</strong> <a href="https://wa.me/919264248108" target="_blank" rel="noopener">+91 92642 48108</a></p>
+      </div>
+      <div class="item">
+        <h3>CrownOS</h3>
+        <p><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M4 21V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17"></path>
+  <path d="M2 21h20"></path>
+  <path d="M8 7h2M8 11h2M8 15h2M12 7h2M12 11h2M12 15h2"></path>
+  <path d="M16 21v-7h3a1 1 0 0 1 1 1v6"></path>
+</svg><strong>Company Email:</strong> <a href="mailto:crownos.dental@gmail.com">crownos.dental@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Ashutosh Priyadarshi · Founder, CrownOS · Patna, Bihar
+  </footer>
+
+</body>
+</html>
