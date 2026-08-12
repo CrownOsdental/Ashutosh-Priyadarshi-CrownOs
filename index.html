@@ -116,6 +116,42 @@
     .btn:hover { background: var(--accent-dark); }
     .demo-btn { margin-left: 8px; background: #111827; }
     .demo-btn:hover { background: #1f2937; }
+
+    .website-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 16px;
+      margin-left: 8px;
+      background: #fff;
+      color: var(--text);
+      padding: 11px 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 5px 18px rgba(16,24,40,.06);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .website-btn:hover {
+      color: var(--accent);
+      border-color: #bfdbfe;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(16,24,40,.10);
+    }
+    .website-icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    @media (max-width: 760px) {
+      .website-btn { margin-left: 0; }
+    }
     @media (max-width: 760px) {
       .demo-btn { margin-left: 0; display: block; width: fit-content; }
     }
@@ -226,6 +262,14 @@
       </p>
       <a class="btn" href="#about">Learn more</a>
       <a class="btn demo-btn" href="https://crown-os-copy-4b738e2f.base44.app" target="_blank" rel="noopener">View CrownOS Demo ↗</a>
+      <a class="website-btn" href="https://crownosdental.github.io/CrownOs/" target="_blank" rel="noopener" aria-label="Visit CrownOS website">
+        <svg class="website-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3 12h18"></path>
+          <path d="M12 3c2.4 2.5 3.6 5.5 3.6 9S14.4 18.5 12 21c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z"></path>
+        </svg>
+        <span>Visit CrownOS Website ↗</span>
+      </a>
     </div>
 
     <div class="hero-card">
@@ -275,6 +319,14 @@
         from healthcare professionals rather than assumptions about what clinics need.
       </p>
       <a class="btn" href="https://crown-os-copy-4b738e2f.base44.app" target="_blank" rel="noopener">Open Live CrownOS Demo ↗</a>
+      <a class="website-btn" href="https://crownosdental.github.io/CrownOs/" target="_blank" rel="noopener" aria-label="Visit CrownOS website">
+        <svg class="website-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3 12h18"></path>
+          <path d="M12 3c2.4 2.5 3.6 5.5 3.6 9S14.4 18.5 12 21c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z"></path>
+        </svg>
+        <span>Visit CrownOS Website ↗</span>
+      </a>
     </div>
   </section>
 
